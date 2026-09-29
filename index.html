@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chisanucha Yimyam – Online Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --concrete: #e7e5e0;
+    --paper: #f5f4f1;
+    --ink: #1f2328;
+    --steel: #565c63;
+    --safety: #f2b705;
+    --line: #c9c6bf;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--concrete);
+    color: var(--ink);
+    font-family: "Barlow", "Segoe UI", Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+  }
+  .page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 4rem;
+  }
+
+  /* Header */
+  header { margin-bottom: 3rem; }
+  h1 {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 700;
+    font-size: clamp(3rem, 11vw, 6rem);
+    line-height: 0.95;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  h1 span {
+    display: inline;
+    background: linear-gradient(transparent 58%, var(--safety) 58%, var(--safety) 92%, transparent 92%);
+    padding: 0 0.1em;
+    margin-left: -0.1em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+  .thai-name {
+    margin: 0.9rem 0 0;
+    color: var(--steel);
+    font-size: 1.15rem;
+  }
+  .contact {
+    margin: 1.6rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 2rem;
+    color: var(--steel);
+    font-size: 0.98rem;
+  }
+  .contact b { color: var(--ink); font-weight: 500; }
+
+  /* Sections */
+  section {
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    gap: 0.5rem 2rem;
+    padding: 2rem 0;
+    border-top: 2px solid var(--ink);
+  }
+  h2 {
+    font-family: "Barlow Condensed", "Arial Narrow", sans-serif;
+    font-weight: 600;
+    font-size: 1.7rem;
+    line-height: 1.2;
+    margin: 0;
+  }
+  p { margin: 0 0 0.9rem; max-width: 62ch; }
+  p:last-child { margin-bottom: 0; }
+  ul { margin: 0; padding: 0; list-style: none; }
+
+  /* Work list */
+  .jobs li {
+    padding: 0.75rem 0 0.75rem 1.1rem;
+    border-left: 4px solid var(--safety);
+    margin-bottom: 0.7rem;
+    background: var(--paper);
+  }
+  .jobs li:last-child { margin-bottom: 0; }
+  .jobs strong { display: block; font-weight: 500; }
+  .jobs small { color: var(--steel); font-size: 0.95rem; }
+
+  /* Education timeline (a real sequence) */
+  .timeline { position: relative; padding-left: 1.6rem; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px; top: 0.5rem; bottom: 0.5rem;
+    width: 2px;
+    background: var(--line);
+  }
+  .timeline li { position: relative; padding-bottom: 1.3rem; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: -1.6rem; top: 0.5rem;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--concrete);
+    border: 2px solid var(--steel);
+  }
+  .timeline li.current::before { background: var(--safety); border-color: var(--ink); }
+  .timeline strong { display: block; font-weight: 500; }
+  .timeline small { color: var(--steel); font-size: 0.95rem; }
+
+  /* Interests */
+  .tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1.2rem; }
+  .tags li {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.3rem 1rem;
+    border-radius: 999px;
+    font-weight: 500;
+  }
+
+  footer {
+    border-top: 2px solid var(--ink);
+    padding-top: 1.2rem;
+    color: var(--steel);
+    font-size: 0.9rem;
+  }
+
+  a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+  @media (max-width: 640px) {
+    .page { padding: 2rem 1.1rem 3rem; }
+    section { grid-template-columns: 1fr; gap: 0.9rem; }
+    .contact { flex-direction: column; }
+  }
+  @media print {
+    body { background: #fff; }
+    .jobs li { background: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <h1><span>Chisanucha<br>Yimyam</span></h1>
+    <p class="thai-name">ชิษณุชา ยิ้มแย้ม &nbsp;(nickname: JJ)</p>
+    <ul class="contact">
+      <li><b>Age</b> 19</li>
+      <li><b>Born</b> Friday, 27 October 2006</li>
+      <li><b>Status</b> University student, year 2</li>
+    </ul>
+  </header>
+
+  <section id="address">
+    <h2>Address</h2>
+    <div>
+      <p>100/1054, Lam Ta Sao Subdistrict, Wang Noi District,<br>
+      Phra Nakhon Si Ayutthaya Province, Thailand</p>
+    </div>
+  </section>
+
+  <section id="profile">
+    <h2>Profile</h2>
+    <div>
+      <p>Hi, my name is JJ. I am 19 years old and was born on Friday, 27 October 2006. I live with my parents and my younger sibling, four of us in total. I am currently in a relationship.</p>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Work experience</h2>
+    <ul class="jobs">
+      <li>
+        <strong>Car repair and concrete mixer truck assembly</strong>
+        <small>Worked at a garage together with my father</small>
+      </li>
+      <li>
+        <strong>Butter-grilled moo kratha restaurant</strong>
+        <small>Restaurant staff</small>
+      </li>
+      <li>
+        <strong>Smoothie shop</strong>
+        <small>Sales assistant</small>
+      </li>
+    </ul>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <ul class="timeline">
+      <li>
+        <strong>Primary school</strong>
+        <small>Thesaban 4 Nong Khae Anusorn School</small>
+      </li>
+      <li>
+        <strong>Lower secondary school</strong>
+        <small>Nong Khae “Sorakit Phittaya” School</small>
+      </li>
+      <li>
+        <strong>Upper secondary school</strong>
+        <small>Nong Khae “Sorakit Phittaya” School</small>
+      </li>
+      <li class="current">
+        <strong>University, year 2 (current)</strong>
+        <small>University of the Thai Chamber of Commerce</small>
+      </li>
+    </ul>
+  </section>
+
+  <section id="interests">
+    <h2>Interests and hobbies</h2>
+    <div>
+      <ul class="tags">
+        <li>Exercise</li>
+        <li>Food</li>
+        <li>Gaming</li>
+      </ul>
+      <p>I am interested in working out, eating good food, and playing video games. In my free time I like to play games and exercise.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 Chisanucha Yimyam
+  </footer>
+
+</div>
+</body>
+</html>
